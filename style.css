@@ -1,0 +1,271 @@
+body {
+    background-color: rgba(7, 11, 14, 1);    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+  
+  
+  .fixed-header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .fixed-header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  main {
+    margin-top: 80px; 
+    padding: 20px;
+  }
+  
+  section {
+    padding: 50px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  h2 {
+    margin-bottom: 15px;
+  }
+  
+  p {
+    line-height: 1.6;
+  }
+
+#menu__toggle {
+    opacity: 0;
+  }
+
+.menu__btn {
+    display: flex; 
+    align-items: center;  
+    position: fixed;
+    top: 12px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 3;
+  }
+ 
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff    ;
+  }
+
+  .menu__btn > span::before {
+    content: '';
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    text-align: center;
+    background-color: #ECEFF1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    z-index: 2;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: "Unbounded", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .menu__item:hover {
+    color: white;
+    background-color: rgba(165, 23, 21, 1);
+  }
+
+  #menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    left: 0;
+  }
+
+/*main*/
+
+.start_composition {
+    margin-top: 1%;    
+}
+
+.map {
+    position: absolute;
+    margin-left: 20%;
+}
+
+.main_title {
+    position: absolute;
+    margin-left: 17%;
+    margin-top: 11%;
+    font-family: "Unbounded", sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 164px;
+}
+
+.subtitle {
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 48%;
+    font-size: 128px;
+    font-family: "La Belle Aurore", cursive;
+    color: rgba(165, 23, 21, 1);
+}
+
+
+
+.card-button {
+    position: relative;
+    display: inline-block;
+    width: 420px;
+    margin-top: 700px;
+    margin-left: 50px;
+    height: 580px;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0px 0px 100px rgba(165, 23, 21, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.card-button:hover {
+  transform: translateY(-10px);
+}
+
+
+
+.card-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-overlay {
+    position: absolute;
+    width: 420px;
+    height: 460px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(0deg, rgba(64, 8, 11, 1), rgba(56, 41, 42, 0) );
+    text-align: left;
+}
+
+.card-title {
+    font-family: "Unbounded", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: px;
+}
+
+.card-description {
+    font-family: "Montserrat", sans-serif;
+    font-style: italic;
+    font-size: 20px;
+}
+
+/*КАРУСЕЛЬ*/
+
+.carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    height: 300%;
+    width: 100%;
+    flex: 0 0 800%
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 78%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 50px;
+    font-size: 100px;
+    cursor: pointer;
+    z-index: 5;
+    border-radius: 10%;
+    overflow: hidden;
+}
+
+.carousel-button.prev {
+    left: 50px;
+}
+
+.carousel-button.next {
+    right: 50px;
+}
